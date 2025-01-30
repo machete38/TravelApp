@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.travelapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.travelapp"
@@ -33,10 +33,19 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
-dependencies {
 
+dependencies {
+    implementation(libs.androidx.coordinatorlayout)
+    implementation(libs.material.v130)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
